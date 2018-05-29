@@ -12,6 +12,10 @@ class Driver {
   trips() {
     return this.tripsArray
   }
+  passengers() {
+    return this.trips().map(trip => {
+      trips.passenger
+  }
 }
 
 let passengerId = 0;
