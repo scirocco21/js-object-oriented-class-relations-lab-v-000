@@ -38,7 +38,7 @@ class Trip {
 
     if (driver) {
       driver.tripsArray.push(this);
-    };
+    }
     if (passenger) {
       passenger.tripsArray.push(this);
     }
