@@ -5,12 +5,12 @@ class Driver {
   constructor(name) {
       this.name = name;
       this.id = ++driverId;
-      this.trips = [];
+      this.tripsArray = [];
       store.drivers.push(this);
   }
 
   trips() {
-    return this.trips
+    return this.tripsArray
   }
 }
 
@@ -20,11 +20,11 @@ class Passenger {
   constructor(name) {
     this.name = name;
     this.id = ++passengerId;
-    this.trips = [];
+    this.tripsArray = [];
     store.passengers.push(this);
   }
   trips() {
-    return this.trips;
+    return this.tripsArray;
   }
 }
 
@@ -35,8 +35,8 @@ class Trip {
     this.passengerId = passenger.id;
     this.id = ++tripId;
     store.trips.push(this);
-    driver.trips.push(this);
-    passenger.trips.push(this);
+    driver.tripsArray.push(this);
+    passenger.tripsArray.push(this);
   }
   driver() {
     return store.drivers.find(driver => {
