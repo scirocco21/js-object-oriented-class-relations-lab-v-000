@@ -35,7 +35,7 @@ class Trip {
     this.passengerId = passenger.id;
     this.id = ++tripId;
     store.trips.push(this);
-    if(driver) {
+    if (driver) {
       driver.tripsArray.push(this);
     }
     if (passenger) {
