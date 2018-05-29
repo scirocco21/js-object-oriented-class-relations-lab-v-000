@@ -13,7 +13,7 @@ class Driver {
     return this.tripsArray
   }
   passengers() {
-    return this.trips().map(trip => {
+    return this.tripsArray.map(trip => {
       trip.passenger
   }
 }
