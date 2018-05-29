@@ -13,8 +13,19 @@ class Driver {
     return this.tripsArray
   }
   passengers() {
-    return this.tripsArray.map(trip => {
-      trip.passenger
+    let passengersIds = [];
+    let passengers = [];
+
+    this.tripsArray.forEach(trip => {
+      passengersIds.push(trip.passengerId);
+    })
+
+    store.passengers.forEach(passenger => {
+      if (passengersIds.includes(passenger.id)) {
+        passengers.push(passenger)
+      }
+    })
+  return passengers;
   }
 }
 
