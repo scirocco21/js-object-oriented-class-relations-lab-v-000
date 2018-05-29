@@ -41,6 +41,22 @@ class Passenger {
   trips() {
     return this.tripsArray;
   }
+
+  let driversIds = [];
+  let drivers = [];
+
+  this.tripsArray.forEach(trip => {
+    driversIds.push(trip.driverId);
+  })
+
+  store.drivers.forEach(driver => {
+    if (driversIds.includes(driver.id)) {
+      drivers.push(driver)
+    }
+  })
+return drivers;
+}
+
 }
 
 let tripId = 0;
