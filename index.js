@@ -35,8 +35,11 @@ class Trip {
     this.passengerId = passenger.id;
     this.id = ++tripId;
     store.trips.push(this);
-    driver.tripsArray.push(this);
-    passenger.tripsArray.push(this);
+    if(driver) {
+      driver.tripsArray.push(this);
+    }
+    if (passenger) {
+      passenger.tripsArray.push(this);
   }
   driver() {
     return store.drivers.find(driver => {
